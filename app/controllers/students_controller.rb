@@ -15,6 +15,7 @@ class StudentsController < ApplicationController
             redirect_to student_path(@student)
         else
             #display some error and show form again 
+        end
     end
 
     def edit

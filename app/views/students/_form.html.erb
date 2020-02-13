@@ -1,0 +1,9 @@
+<%= form_for(@student) do |f| %>
+    First Name: <%= f.text_field :first_name %><br>
+    Last Name: <%= f.text_field :last_name %><br>
+    Classification: <%= f.select :classification, options_for_select(['Freshman', 'Sophomore', 'Junior', 'Senior']) %><br>
+    Email: <%= f.text_field :email %><br>
+    Password: <%= f.password_field :password %><br>
+    Confirm Password: <%= f.password_field :password_confirmation %><br>
+    <%= f.submit "Submit Student Information" %>
+<% end %>
