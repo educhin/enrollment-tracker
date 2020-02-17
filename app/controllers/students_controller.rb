@@ -1,4 +1,6 @@
 class StudentsController < ApplicationController
+    # before_action :authentication_required
+    # before action will be on ibdex and show methods
     def index
         # this page should only be accesible by admins.
         # Other students should not be able to see a entire list of students
