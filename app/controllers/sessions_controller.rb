@@ -5,8 +5,11 @@ class SessionsController < ApplicationController
 
     def create
         student = Student.find_by(email: params[:email])
-        if student
-            session[:user_id] = student.id
+        authenticated = student.try(:authenticate, params[:student][:password])
+        return redirect_to(controller: 'sessions', action: 'new') unless authenticated
+        @student = student
+        session[:student_id] = @student.id
+        # set redirect_to student_path(@student) once created
     end
 
     def destroy
