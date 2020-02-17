@@ -1,13 +1,16 @@
 class ApplicationController < ActionController::Base
     before_action :current_student
-    helper
+    helper_method :current_student
 
     def current_student
-      @student = (student.find_by(id: session[:student_id]) || Student.new)
+        @current_student ||= (Student.find_by(id: session[:student_id]) || Student.new)
+        # not certain which method is perfered as of yet
+        # @current_student ||= Student.find_by(id: session[:student_id]) if session[:student_id]
     end
   
     def logged_in?
       current_student.id != nil
+    #   or !!current_student if using second code line in current_student
     end
   
     def authentication_required
