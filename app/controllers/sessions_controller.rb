@@ -14,6 +14,6 @@ class SessionsController < ApplicationController
 
     def destroy
         reset_session
-        # set redirect_to root_path once created
+        redirect_to login_path
     end
 end
