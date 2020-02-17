@@ -14,7 +14,7 @@ class StudentsController < ApplicationController
         if @student.save
             redirect_to student_path(@student)
         else
-            #display some error and show form again 
+            render :new
         end
     end
 
@@ -29,7 +29,7 @@ class StudentsController < ApplicationController
     private
 
     def student_params
-
+        params.require(:student).permit(:first_name, :last_name, :classification, :email, :password, :password_confirmation)
     end
 
 end
