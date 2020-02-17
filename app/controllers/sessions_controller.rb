@@ -3,7 +3,9 @@ class SessionsController < ApplicationController
     end
 
     def create
-
+        student = Student.find_by(email: params[:email])
+        if student
+            session[:user_id] = student.id
     end
 
     def destroy
