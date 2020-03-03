@@ -1,10 +1,15 @@
 class StudentsController < ApplicationController
-    # before_action :authentication_required
+    before_action :authentication_required, only: [:show, :index, :update]
     # before action will be on ibdex and show methods
     def index
         # this page should only be accesible by admins.
         # Other students should not be able to see a entire list of students
         @students = Student.all
+    end
+
+    def show
+        #update link to show students name
+        @student = Student.find(session[:student_id])
     end
 
     def new

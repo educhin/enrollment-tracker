@@ -15,8 +15,8 @@ class ApplicationController < ActionController::Base
   
     def authentication_required
         if !logged_in?
-            flash[:alert] = "You must be logged in to view that page."
-            redirect_to login_path
+            # flash[:notice] = "You must be logged in to view that page."
+            redirect_to login_path, flash: {notice: "You must be logged in to view that page."}
         end
     #   return redirect_to(controller: 'sessions', action: 'new') unless logged_in?
     end
