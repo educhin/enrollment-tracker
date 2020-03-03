@@ -9,7 +9,13 @@ class Student < ActiveRecord::Base
             format: { with: VALID_EMAIL_REGEX },
             uniqueness: { case_sensitive: false }
     validates :password, presence: true, length: { minimum: 8, maximum: 25 },
-            confirmation: { message: "Password must match confirmation" }
+            confirmation: { message: "Password must match confirmation" }, if: :validate_password?
+
+
+
+        def validate_password?
+                new_record? || !password.blank?
+        end
 
 
 end

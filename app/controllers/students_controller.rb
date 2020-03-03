@@ -27,17 +27,24 @@ class StudentsController < ApplicationController
     end
 
     def edit
-
+        @student = Student.find(session[:student_id])
     end
 
     def update
-
+        @student = Student.find(session[:student_id])
+        if @student.update(student_params)
+            redirect_to student_path(@student)
+        else
+            render :edit
+        end
     end
 
     private
 
     def student_params
-        params.require(:student).permit(:first_name, :last_name, :classification, :email, :password, :password_confirmation)
+        student_params = params.require(:student).permit(:first_name, :last_name, :classification, :email, :password, :password_confirmation)
+        student_params.delete(:password) unless student_params[:password].present?
+        student_params.delete(:password_confirmation) unless student_params[:password_confirmation].present?
+        student_params
     end
-
 end

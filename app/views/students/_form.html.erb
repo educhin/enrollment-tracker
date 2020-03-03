@@ -1,4 +1,17 @@
 <%= form_for(@student) do |f| %>
+    <% if @student.errors.any? %>
+
+        <div class="form-errors">
+
+            <h2><%= pluralize(@student.errors.count, "error") %> have occurred:</h2>
+            
+            <% @student.errors.full_messages.each do |msg| %>
+                <h4><%= msg %></h4>
+            <% end %>
+
+        </div>
+
+    <% end %>
     First Name: <%= f.text_field :first_name %><br>
     Last Name: <%= f.text_field :last_name %><br>
     Classification: <%= f.select :classification, options_for_select(['Freshman', 'Sophomore', 'Junior', 'Senior']) %><br>

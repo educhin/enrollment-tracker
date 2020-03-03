@@ -4,7 +4,6 @@ class SessionsController < ApplicationController
     end
 
     def create
-        # raise params.inspect
         student = Student.find_by(email: params[:email])
         authenticated = student.try(:authenticate, params[:password])
         return redirect_to(controller: 'sessions', action: 'new') unless authenticated
