@@ -1,0 +1,7 @@
+<h2>Current Course Offerings: </h2>
+
+Course Code | Course Title <br>
+<% @courses.each do |course| %>
+    <%= course.course_code %> |
+    <%= link_to course.title, course_path(course) %> <br>
+<% end %>
