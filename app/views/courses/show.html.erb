@@ -1,0 +1,4 @@
+<h2><u><%= @course.title %> (<%= @course.course_code %>)</u></h2>
+<p>Credit Hours: <%= @course.credit_hours %></p>
+<p>Course Days: <%= @course.days %></p>
+<p>Start Time: <%= @course.start_time.strftime("%l:%M %P") %></p>
