@@ -3,3 +3,13 @@
 <p>Course Days: <%= @course.days %></p>
 <p>Start Time: <%= @course.start_time.strftime("%l:%M %P") %></p>
 
+<%= form_tag({:controller => "courses", :action => "enroll"}, :method => "post") do %>
+    <%= hidden_field_tag(:student_id, session[:student_id]) %>
+    <%= hidden_field_tag(:course_id, @course.id) %>
+    <%= label_tag(:semester, "Semester to Enroll:") %>
+    <%= select_tag(:semester, options_for_select(['Spring', 'May', 'Summer', 'Fall'])) %><br>
+    <%= label_tag(:payment_method, "Please select payment option:") %>
+    <%= select_tag(:payment_method, options_for_select(['Out of Pocket', 'Scholarship', 'Other'])) %><br>
+    <%= submit_tag "Enroll in this course" %>
+<% end %>
+

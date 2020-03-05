@@ -1,4 +1,4 @@
-class Enrollment
-    belongs_to :class
+class Enrollment < ActiveRecord::Base
+    belongs_to :course
     belongs_to :student
 end

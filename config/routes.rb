@@ -3,8 +3,8 @@ Rails.application.routes.draw do
 
   resources :students
   resources :courses, only: [:index, :show]
-  get '/course', to: 'courses#index'
   get '/login', to: 'sessions#new'
   post '/sessions', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
+  post '/enroll', to: 'courses#enroll'
 end

@@ -1,6 +1,6 @@
 class Student < ActiveRecord::Base
     has_many :enrollments
-    has_many :students, through: :enrollments
+    has_many :courses, through: :enrollments
     has_secure_password
     validates :first_name,  presence: true, length: { minimum: 2, maximum: 50 }
     validates :last_name,  presence: true, length: { minimum: 2, maximum: 50 }

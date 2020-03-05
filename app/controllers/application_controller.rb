@@ -3,9 +3,9 @@ class ApplicationController < ActionController::Base
     helper_method :current_student
 
     def current_student
-        @current_student ||= (Student.find_by(id: session[:student_id]) || Student.new)
+        # @current_student ||= (Student.find_by(id: session[:student_id]) || Student.new)
         # not certain which method is perfered as of yet
-        # @current_student ||= Student.find_by(id: session[:student_id]) if session[:student_id]
+        @current_student ||= Student.find_by(id: session[:student_id]) if session[:student_id]
     end
   
     def logged_in?
