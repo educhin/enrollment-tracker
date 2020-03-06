@@ -1,9 +1,9 @@
 module CoursesHelper
     def display_enroll_or_drop(course)
-        if current_student.courses.enrolled(course.id)
-            link_to courses_path
+        if current_student.courses.enrolled(course.id) != []
+            button_to "Drop this course", {:controller => "courses", :action => "drop_class", :course_id => course.id}, :method=>:post
         else
-            <%= render 'enrolled' %>
+            render partial: 'enrolled'
         end
     end
 end
