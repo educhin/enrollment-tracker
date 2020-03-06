@@ -9,8 +9,9 @@ class ApplicationController < ActionController::Base
     end
   
     def logged_in?
-      current_student.id != nil
-    #   or !!current_student if using second code line in current_student
+    #   current_student.id != nil
+     !!current_student
+    # if using second code line in current_student
     end
   
     def authentication_required
