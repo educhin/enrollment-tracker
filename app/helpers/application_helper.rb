@@ -16,9 +16,10 @@ module ApplicationHelper
         end
     end
 
-    def display_courses
+    def display_link_to_courses
         if current_student
             link_to "Courses", courses_path, class: "navbar-brand"
         end
     end
+
 end

@@ -9,7 +9,9 @@ class StudentsController < ApplicationController
 
     def show
         #update link to show students name
-        @student = Student.find(session[:student_id])
+        student = Student.find(session[:student_id])
+        @student = student
+        @courses = student.courses
     end
 
     def new

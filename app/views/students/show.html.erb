@@ -1,8 +1,6 @@
-Welcome <%= @student.first_name %>
+<h2>Welcome <%= @student.first_name.capitalize %></h2>
+<%= link_to "Edit Profile", edit_student_path(@student) %>
 
-Here are the courses you are currently enrolled in:
+<h4>Here are the courses you are currently enrolled in:</h4>
+<%= render 'layouts/courses' %>
 
-
-add link to enroll in new course
-add link to logout
-add link to edit profile
