@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :students
   resources :courses, only: [:index, :show]
   get '/login', to: 'sessions#new'
+  get '/auth/github/callback' => 'sessions#github'
   post '/sessions', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
   post '/enroll', to: 'courses#enroll'

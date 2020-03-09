@@ -3,4 +3,8 @@
     <%= text_field_tag :email, '', {placeholder: 'Enter email'}%>
     <%= password_field_tag :password, '', {placeholder: 'Enter password'} %>
     <%= submit_tag 'Login' %>
-<% end %>
+<% end %><br>
+
+<p>Or</p>
+
+<h3><%= link_to('Log in with Github!', '/auth/github') %></h3>
