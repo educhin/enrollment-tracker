@@ -2,7 +2,11 @@ class CoursesController < ApplicationController
     before_action :authentication_required
 
     def index 
-        @courses = Course.all
+        if params[:student_id]
+            @courses = Student.find(params[:student_id]).courses
+        else
+            @courses = Course.all
+        end
     end
 
     def show
