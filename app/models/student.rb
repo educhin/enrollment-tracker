@@ -19,10 +19,6 @@ class Student < ActiveRecord::Base
                 new_record? || !password.blank?
         end
 
-        def validate_lastname?
-                !uid.present?
-        end
-
         def is_github_user?
                 uid.present?
         end
