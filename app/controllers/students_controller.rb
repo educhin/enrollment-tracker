@@ -15,7 +15,12 @@ class StudentsController < ApplicationController
     end
 
     def new
-        @student = Student.new
+        if current_student
+            redirect_to student_path(current_student)
+        else
+            @student = Student.new
+        end
+        
     end
 
     def create

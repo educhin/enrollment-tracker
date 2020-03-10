@@ -1,6 +1,9 @@
 class SessionsController < ApplicationController
 
     def new
+        if current_student
+            redirect_to student_path(current_student)
+        end
     end
 
     def create
