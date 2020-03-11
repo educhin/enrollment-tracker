@@ -1,3 +1,4 @@
+<h3>Enroll in a new course!</h3>
 <%= form_for(@enrollment) do |f| %>
     <%= select_tag(:course_id, options_from_collection_for_select(Course.all, :id, :title) %><br>
     <%= label_tag(:semester, "Semester to Enroll:") %>
