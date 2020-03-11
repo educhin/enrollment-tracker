@@ -4,10 +4,11 @@ Rails.application.routes.draw do
   root 'welcome#home'
   resources :students, only: [:show, :new, :create, :edit, :update] do
     resources :courses, only: [:show]
+    resources :enrollments, only: [:new]
   end 
   resources :courses, only: [:index, :show]
 
-  resources :enrollments, only: [:new, :create, :destroy]
+  resources :enrollments, only: [:index, :new, :create, :destroy]
 
   get '/login', to: 'sessions#new'
   get '/auth/github/callback' => 'sessions#github'

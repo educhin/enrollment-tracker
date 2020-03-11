@@ -1,0 +1,8 @@
+<% @enrollments.each do |enrollment| %>
+    <%= enrollment.course.title %>
+    <%= enrollment.payment_method %>
+    <%= enrollment.semester %>
+<% end %>
+
+<%= link_to 'Enroll in another course', new_student_enrollment_path(current_student) %>
+

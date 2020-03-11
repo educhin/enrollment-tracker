@@ -1,0 +1,8 @@
+<%= form_for(@enrollment) do |f| %>
+    <%= select_tag(:course_id, options_from_collection_for_select(Course.all, :id, :title) %><br>
+    <%= label_tag(:semester, "Semester to Enroll:") %>
+    <%= select_tag(:semester, options_for_select(['Spring', 'May', 'Summer', 'Fall'])) %><br>
+    <%= label_tag(:payment_method, "Please select payment option:") %>
+    <%= select_tag(:payment_method, options_for_select(['Out of Pocket', 'Scholarship', 'Other'])) %><br>
+    <%= submit_tag "Enroll in this course" %>
+<% end %>
