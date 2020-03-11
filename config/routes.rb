@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   end 
   resources :courses, only: [:index, :show]
 
+  resources :enrollments, only: [:new, :create, :destroy]
+
   get '/login', to: 'sessions#new'
   get '/auth/github/callback' => 'sessions#github'
   post '/sessions', to: 'sessions#create'

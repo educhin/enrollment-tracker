@@ -1,4 +1,4 @@
-<%= form_tag({:controller => "courses", :action => "enroll"}, :method => "post") do %>
+<%= form_tag({:controller => "enrollments", :action => "create"}, :method => "post") do %>
     <%= hidden_field_tag(:student_id, session[:student_id]) %>
     <%= hidden_field_tag(:course_id, @course.id) %>
     <%= label_tag(:semester, "Semester to Enroll:") %>
