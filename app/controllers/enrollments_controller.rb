@@ -11,11 +11,12 @@ class EnrollmentsController < ApplicationController
         else 
             @enrollment = Enrollment.new
         end
+        @courses = Course.already_enrolled(current_student)
     end
 
     def create
         @student = Student.find(session[:student_id])
-        @course = Course.find(params[:enrollment][:course_id])
+        @course = Course.find(params[:course_id])
         @enrollment = Enrollment.create(student_id: @student.id, course_id: @course.id, payment_method: params[:payment_method], semester: params[:semester])
         flash[:alert] = "You have successfully enrolled in #{@course.title}"
         redirect_to student_path(@student)

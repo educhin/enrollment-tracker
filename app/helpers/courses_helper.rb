@@ -14,4 +14,5 @@ module CoursesHelper
             link_to course.title, course_path(course)
         end
     end
+
 end

@@ -1,8 +1,11 @@
 <h3>Here are your current enrollments</h3>
+<u><h4>Semester | Payment | Course </h4></u>
 <% @enrollments.each do |enrollment| %>
+    <p> 
+    <%= enrollment.semester %> |
+    <%= enrollment.payment_method %> |
     <%= enrollment.course.title %>
-    <%= enrollment.payment_method %>
-    <%= enrollment.semester %><br>
+    </p>
 <% end %>
 
 <%= link_to 'Enroll in another course', new_student_enrollment_path(current_student) %>

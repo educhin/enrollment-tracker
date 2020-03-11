@@ -21,4 +21,10 @@ module ApplicationHelper
             link_to "Courses", courses_path, class: "navbar-brand"
         end
     end
+
+    def display_link_to_enrollments
+        if current_student
+            link_to "Enrollments", enrollments_path, class: "navbar-brand"
+        end
+    end
 end
