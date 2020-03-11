@@ -21,5 +21,4 @@ module ApplicationHelper
             link_to "Courses", courses_path, class: "navbar-brand"
         end
     end
-
 end

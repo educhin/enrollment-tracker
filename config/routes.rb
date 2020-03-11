@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
+  root 'welcome#home'
   resources :students, only: [:show, :new, :create, :edit, :update] do
-    resources :courses, only: [:index, :show]
+    resources :courses, only: [:show]
   end 
   resources :courses, only: [:index, :show]
 
