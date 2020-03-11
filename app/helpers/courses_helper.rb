@@ -6,4 +6,12 @@ module CoursesHelper
             render partial: 'enrolled'
         end
     end
+
+    def display_course_or_student_course(course)
+        if params[:id]
+            link_to course.title, student_course_path(current_student, course)
+        else
+            link_to course.title, course_path(course)
+        end
+    end
 end

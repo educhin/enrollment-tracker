@@ -12,10 +12,10 @@
         </div>
 
     <% end %>
-    First Name: <%= f.text_field :first_name, placeholder: 'Please enter your First Name' %><br>
-    Last Name: <%= f.text_field :last_name, placeholder: 'Please enter your Last Name' %><br>
+    First Name: <%= f.text_field :first_name, placeholder: 'Enter your first name' %><br>
+    Last Name: <%= f.text_field :last_name, placeholder: 'Enter your last name' %><br>
     Classification: <%= f.select :classification, options_for_select(['Freshman', 'Sophomore', 'Junior', 'Senior']) %><br>
-    Email: <%= f.text_field :email, placeholder: 'Please enter your Email Address' %><br>
+    Email: <%= f.text_field :email, placeholder: 'Enter your email address' %><br>
     Password: <%= f.password_field :password, :disabled => @student.is_github_user? %><br>
     Confirm Password: <%= f.password_field :password_confirmation, :disabled => @student.is_github_user? %><br>
     <%= f.submit "Submit Student Information" %>
