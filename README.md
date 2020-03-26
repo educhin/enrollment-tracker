@@ -1,24 +1,9 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Hey! This is the Git Repo for my application, Enrollment Tracker!
 
-Things you may want to cover:
+This application was created for a Flatiron School project and is not intended to seriously track your enrollments although the functionality still works. 
 
-* Ruby version
+The application is not deployed and will need to be run on your local rails server after cloning the repo down. 
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Fill free to fork this repo and make changes in your own profile. 
